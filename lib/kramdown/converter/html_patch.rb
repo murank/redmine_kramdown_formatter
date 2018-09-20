@@ -53,9 +53,9 @@ module Kramdown
           if lang.present?
             "<code class=\"#{CGI.escapeHTML(lang)} syntaxhl\">" +
               Redmine::SyntaxHighlighting.highlight_by_language(el.value, lang) +
-              '</code>'
+            "</code>"
           else
-            CGI.escapeHTML(el.value)
+            "<code>" + CGI.escapeHTML(el.value) + "</code>"
           end
         end
       end
